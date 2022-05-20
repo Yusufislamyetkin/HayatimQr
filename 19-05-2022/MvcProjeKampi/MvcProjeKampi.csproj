@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED3CB3C7-9639-49ED-BE7E-A6D06C397EED}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcProjeKampi</RootNamespace>
+    <AssemblyName>MvcProjeKampi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44329</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.4.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\..\Downloads\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AdminPanelController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ReadQrController.cs" />
+    <Compile Include="Controllers\UserHomeBController.cs" />
+    <Compile Include="Controllers\UserHomeController.cs" />
+    <Compile Include="Controllers\UserLoginController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\UserRoleProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Extra\404NotFound\css\style.css" />
+    <Content Include="Extra\404NotFound\img\bg.jpg" />
+    <Content Include="Extra\404NotFound\index.html" />
+    <Content Include="Extra\404NotFound\readme.txt" />
+    <Content Include="Extra\CssExtra\cardList.css" />
+    <Content Include="Extra\CssExtra\cardlist2.css" />
+    <Content Include="Extra\forcontact.css" />
+    <Content Include="Extra\forcontactfollow.css" />
+    <Content Include="Extra\forprofilesetting.css" />
+    <Content Include="Extra\Homepage\Login\assets\css\style.css" />
+    <Content Include="Extra\Homepage\Login\assets\img\apple-touch-icon.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\clients\client-1.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\clients\client-2.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\clients\client-3.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\clients\client-4.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\clients\client-5.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\clients\client-6.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\favicon.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\features-1.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\features-2.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\features-3.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\features-4.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\hero-img.png" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-1.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-2.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-3.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-4.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-5.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-6.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-7.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-8.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-details-1.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-details-2.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\team\team-1.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\team\team-2.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\team\team-3.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\team\team-4.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Extra\Homepage\Login\assets\js\main.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\aos\aos.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\aos\aos.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap-icons\index.html" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\php-email-form\validate.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Extra\Homepage\Login\changelog.txt" />
+    <Content Include="Extra\Homepage\Login\forms\contact.php" />
+    <Content Include="Extra\Homepage\Login\forms\Readme.txt" />
+    <Content Include="Extra\Homepage\Login\index.html" />
+    <Content Include="Extra\Homepage\Login\inner-page.html" />
+    <Content Include="Extra\Homepage\Login\portfolio-details.html" />
+    <Content Include="Extra\Homepage\Login\Readme.txt" />
+    <Content Include="Extra\images\blue.png" />
+    <Content Include="Extra\images\c.png" />
+    <Content Include="Extra\images\defaultDC.jpg" />
+    <Content Include="Extra\images\defaultfood.png" />
+    <Content Include="Extra\images\deffood.jpg" />
+    <Content Include="Extra\images\food.png" />
+    <Content Include="Extra\images\fooddef.png" />
+    <Content Include="Extra\images\fr.png" />
+    <Content Include="Extra\images\fr3.jpg" />
+    <Content Include="Extra\images\fre2.png" />
+    <Content Include="Extra\images\hamburger.png" />
+    <Content Include="Extra\images\pasta.png" />
+    <Content Include="Extra\userviewcs.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Web2\assets\css\demo.css" />
+    <Content Include="Web2\assets\img\avatars\1.png" />
+    <Content Include="Web2\assets\img\avatars\5.png" />
+    <Content Include="Web2\assets\img\avatars\6.png" />
+    <Content Include="Web2\assets\img\avatars\7.png" />
+    <Content Include="Web2\assets\img\backgrounds\18.jpg" />
+    <Content Include="Web2\assets\img\elements\1.jpg" />
+    <Content Include="Web2\assets\img\elements\11.jpg" />
+    <Content Include="Web2\assets\img\elements\12.jpg" />
+    <Content Include="Web2\assets\img\elements\13.jpg" />
+    <Content Include="Web2\assets\img\elements\17.jpg" />
+    <Content Include="Web2\assets\img\elements\18.jpg" />
+    <Content Include="Web2\assets\img\elements\19.jpg" />
+    <Content Include="Web2\assets\img\elements\2.jpg" />
+    <Content Include="Web2\assets\img\elements\20.jpg" />
+    <Content Include="Web2\assets\img\elements\3.jpg" />
+    <Content Include="Web2\assets\img\elements\4.jpg" />
+    <Content Include="Web2\assets\img\elements\5.jpg" />
+    <Content Include="Web2\assets\img\elements\7.jpg" />
+    <Content Include="Web2\assets\img\favicon\favicon.ico" />
+    <Content Include="Web2\assets\img\icons\brands\asana.png" />
+    <Content Include="Web2\assets\img\icons\brands\behance.png" />
+    <Content Include="Web2\assets\img\icons\brands\dribbble.png" />
+    <Content Include="Web2\assets\img\icons\brands\facebook.png" />
+    <Content Include="Web2\assets\img\icons\brands\github.png" />
+    <Content Include="Web2\assets\img\icons\brands\google.png" />
+    <Content Include="Web2\assets\img\icons\brands\instagram.png" />
+    <Content Include="Web2\assets\img\icons\brands\mailchimp.png" />
+    <Content Include="Web2\assets\img\icons\brands\slack.png" />
+    <Content Include="Web2\assets\img\icons\brands\twitter.png" />
+    <Content Include="Web2\assets\img\icons\unicons\cc-primary.png" />
+    <Content Include="Web2\assets\img\icons\unicons\cc-success.png" />
+    <Content Include="Web2\assets\img\icons\unicons\cc-warning.png" />
+    <Content Include="Web2\assets\img\icons\unicons\chart-success.png" />
+    <Content Include="Web2\assets\img\icons\unicons\chart.png" />
+    <Content Include="Web2\assets\img\icons\unicons\paypal.png" />
+    <Content Include="Web2\assets\img\icons\unicons\wallet-info.png" />
+    <Content Include="Web2\assets\img\icons\unicons\wallet.png" />
+    <Content Include="Web2\assets\img\illustrations\girl-doing-yoga-light.png" />
+    <Content Include="Web2\assets\img\illustrations\man-with-laptop-light.png" />
+    <Content Include="Web2\assets\img\illustrations\page-misc-error-light.png" />
+    <Content Include="Web2\assets\img\layouts\layout-container-light.png" />
+    <Content Include="Web2\assets\img\layouts\layout-fluid-light.png" />
+    <Content Include="Web2\assets\img\layouts\layout-without-menu-light.png" />
+    <Content Include="Web2\assets\img\layouts\layout-without-navbar-light.png" />
+    <Content Include="Web2\assets\js\config.js" />
+    <Content Include="Web2\assets\js\dashboards-analytics.js" />
+    <Content Include="Web2\assets\js\extended-ui-perfect-scrollbar.js" />
+    <Content Include="Web2\assets\js\form-basic-inputs.js" />
+    <Content Include="Web2\assets\js\main.js" />
+    <Content Include="Web2\assets\js\pages-account-settings-account.js" />
+    <Content Include="Web2\assets\js\ui-modals.js" />
+    <Content Include="Web2\assets\js\ui-popover.js" />
+    <Content Include="Web2\assets\js\ui-toasts.js" />
+    <Content Include="Web2\assets\vendor\css\core.css" />
+    <Content Include="Web2\assets\vendor\css\pages\page-account-settings.css" />
+    <Content Include="Web2\assets\vendor\css\pages\page-auth.css" />
+    <Content Include="Web2\assets\vendor\css\pages\page-icons.css" />
+    <Content Include="Web2\assets\vendor\css\pages\page-misc.css" />
+    <Content Include="Web2\assets\vendor\css\theme-default.css" />
+    <Content Include="Web2\assets\vendor\fonts\boxicons.css" />
+    <Content Include="Web2\assets\vendor\fonts\boxicons\boxicons.svg" />
+    <Content Include="Web2\assets\vendor\js\bootstrap.js" />
+    <Content Include="Web2\assets\vendor\js\helpers.js" />
+    <Content Include="Web2\assets\vendor\js\menu.js" />
+    <Content Include="Web2\assets\vendor\libs\apex-charts\apex-charts.css" />
+    <Content Include="Web2\assets\vendor\libs\apex-charts\apexcharts.js" />
+    <Content Include="Web2\assets\vendor\libs\highlight\highlight-github.css" />
+    <Content Include="Web2\assets\vendor\libs\highlight\highlight.css" />
+    <Content Include="Web2\assets\vendor\libs\highlight\highlight.js" />
+    <Content Include="Web2\assets\vendor\libs\jquery\jquery.js" />
+    <Content Include="Web2\assets\vendor\libs\masonry\masonry.js" />
+    <Content Include="Web2\assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Web2\assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="Web2\assets\vendor\libs\popper\popper.js" />
+    <Content Include="Web2\build-config.js" />
+    <Content Include="Web2\dist\css\core.css" />
+    <Content Include="Web2\dist\css\pages\page-account-settings.css" />
+    <Content Include="Web2\dist\css\pages\page-auth.css" />
+    <Content Include="Web2\dist\css\pages\page-icons.css" />
+    <Content Include="Web2\dist\css\pages\page-misc.css" />
+    <Content Include="Web2\dist\css\theme-default.css" />
+    <Content Include="Web2\dist\fonts\boxicons.css" />
+    <Content Include="Web2\dist\fonts\boxicons\boxicons.svg" />
+    <Content Include="Web2\dist\js\bootstrap.js" />
+    <Content Include="Web2\dist\js\helpers.js" />
+    <Content Include="Web2\dist\js\menu.js" />
+    <Content Include="Web2\dist\libs\apex-charts\apex-charts.css" />
+    <Content Include="Web2\dist\libs\apex-charts\apexcharts.js" />
+    <Content Include="Web2\dist\libs\highlight\highlight-github.css" />
+    <Content Include="Web2\dist\libs\highlight\highlight.css" />
+    <Content Include="Web2\dist\libs\highlight\highlight.js" />
+    <Content Include="Web2\dist\libs\jquery\jquery.js" />
+    <Content Include="Web2\dist\libs\masonry\masonry.js" />
+    <Content Include="Web2\dist\libs\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Web2\dist\libs\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="Web2\dist\libs\popper\popper.js" />
+    <Content Include="Web2\gulpfile.js" />
+    <Content Include="Web2\html\auth-forgot-password-basic.html" />
+    <Content Include="Web2\html\auth-login-basic.html" />
+    <Content Include="Web2\html\auth-register-basic.html" />
+    <Content Include="Web2\html\cards-basic.html" />
+    <Content Include="Web2\html\extended-ui-perfect-scrollbar.html" />
+    <Content Include="Web2\html\extended-ui-text-divider.html" />
+    <Content Include="Web2\html\form-layouts-horizontal.html" />
+    <Content Include="Web2\html\form-layouts-vertical.html" />
+    <Content Include="Web2\html\forms-basic-inputs.html" />
+    <Content Include="Web2\html\forms-input-groups.html" />
+    <Content Include="Web2\html\icons-boxicons.html" />
+    <Content Include="Web2\html\index.html" />
+    <Content Include="Web2\html\layouts-blank.html" />
+    <Content Include="Web2\html\layouts-container.html" />
+    <Content Include="Web2\html\layouts-fluid.html" />
+    <Content Include="Web2\html\layouts-without-menu.html" />
+    <Content Include="Web2\html\layouts-without-navbar.html" />
+    <Content Include="Web2\html\pages-account-settings-account.html" />
+    <Content Include="Web2\html\pages-account-settings-connections.html" />
+    <Content Include="Web2\html\pages-account-settings-notifications.html" />
+    <Content Include="Web2\html\pages-misc-error.html" />
+    <Content Include="Web2\html\pages-misc-under-maintenance.html" />
+    <Content Include="Web2\html\tables-basic.html" />
+    <Content Include="Web2\html\ui-accordion.html" />
+    <Content Include="Web2\html\ui-alerts.html" />
+    <Content Include="Web2\html\ui-badges.html" />
+    <Content Include="Web2\html\ui-buttons.html" />
+    <Content Include="Web2\html\ui-carousel.html" />
+    <Content Include="Web2\html\ui-collapse.html" />
+    <Content Include="Web2\html\ui-dropdowns.html" />
+    <Content Include="Web2\html\ui-footer.html" />
+    <Content Include="Web2\html\ui-list-groups.html" />
+    <Content Include="Web2\html\ui-modals.html" />
+    <Content Include="Web2\html\ui-navbar.html" />
+    <Content Include="Web2\html\ui-offcanvas.html" />
+    <Content Include="Web2\html\ui-pagination-breadcrumbs.html" />
+    <Content Include="Web2\html\ui-progress.html" />
+    <Content Include="Web2\html\ui-spinners.html" />
+    <Content Include="Web2\html\ui-tabs-pills.html" />
+    <Content Include="Web2\html\ui-toasts.html" />
+    <Content Include="Web2\html\ui-tooltips-popovers.html" />
+    <Content Include="Web2\html\ui-typography.html" />
+    <Content Include="Web2\index.html" />
+    <Content Include="Web2\js\bootstrap.js" />
+    <Content Include="Web2\js\helpers.js" />
+    <Content Include="Web2\js\menu.js" />
+    <Content Include="Web2\libs\apex-charts\apexcharts.js" />
+    <Content Include="Web2\libs\highlight\highlight.js" />
+    <Content Include="Web2\libs\jquery\jquery.js" />
+    <Content Include="Web2\libs\masonry\masonry.js" />
+    <Content Include="Web2\libs\perfect-scrollbar\perfect-scrollbar.js" />
+    <Content Include="Web2\libs\popper\popper.js" />
+    <Content Include="Web2\tasks\build.js" />
+    <Content Include="Web2\tasks\prod.js" />
+    <Content Include="Web2\webpack.config.js" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Extra\Homepage\Login\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Web2\.browserslistrc" />
+    <Content Include="Web2\assets\vendor\fonts\boxicons\boxicons.eot" />
+    <Content Include="Web2\assets\vendor\fonts\boxicons\boxicons.ttf" />
+    <Content Include="Web2\assets\vendor\fonts\boxicons\boxicons.woff" />
+    <Content Include="Web2\assets\vendor\fonts\boxicons\boxicons.woff2" />
+    <Content Include="Web2\dist\fonts\boxicons\boxicons.eot" />
+    <Content Include="Web2\dist\fonts\boxicons\boxicons.ttf" />
+    <Content Include="Web2\dist\fonts\boxicons\boxicons.woff" />
+    <Content Include="Web2\dist\fonts\boxicons\boxicons.woff2" />
+    <Content Include="Web2\fonts\boxicons.scss" />
+    <Content Include="Web2\libs\apex-charts\apex-charts.scss" />
+    <Content Include="Web2\libs\highlight\highlight-github.scss" />
+    <Content Include="Web2\libs\highlight\highlight.scss" />
+    <Content Include="Web2\libs\perfect-scrollbar\perfect-scrollbar.scss" />
+    <Content Include="Web2\package.json" />
+    <Content Include="Web2\scss\core.scss" />
+    <Content Include="Web2\scss\pages\page-account-settings.scss" />
+    <Content Include="Web2\scss\pages\page-auth.scss" />
+    <Content Include="Web2\scss\pages\page-icons.scss" />
+    <Content Include="Web2\scss\pages\page-misc.scss" />
+    <Content Include="Web2\scss\theme-default.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_floating-labels.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_form-control.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_form-range.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_form-select.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_input-group.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_labels.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\forms\_validation.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_alert.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_badge.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_buttons.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_caret.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_dropdown.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_forms.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_list-group.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_misc.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_navs.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_pagination.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_progress.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_table-variants.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\mixins\_toasts.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_accordion.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_alert.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_badge.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_breadcrumb.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_button-group.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_buttons.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_card.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_carousel.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_close.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_dropdown.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_forms.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_functions.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_include.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_list-group.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_mixins.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_modal.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_nav.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_navbar.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_offcanvas.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_pagination.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_popover.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_progress.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_reboot.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_root.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_spinners.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_tables.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_toasts.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_tooltip.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_type.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_utilities-ltr.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_utilities.scss" />
+    <Content Include="Web2\scss\_bootstrap-extended\_variables.scss" />
+    <Content Include="Web2\scss\_bootstrap.scss" />
+    <Content Include="Web2\scss\_colors.scss" />
+    <Content Include="Web2\scss\_components.scss" />
+    <Content Include="Web2\scss\_components\mixins\_app-brand.scss" />
+    <Content Include="Web2\scss\_components\mixins\_avatar.scss" />
+    <Content Include="Web2\scss\_components\mixins\_footer.scss" />
+    <Content Include="Web2\scss\_components\mixins\_menu.scss" />
+    <Content Include="Web2\scss\_components\mixins\_misc.scss" />
+    <Content Include="Web2\scss\_components\mixins\_navbar.scss" />
+    <Content Include="Web2\scss\_components\mixins\_text-divider.scss" />
+    <Content Include="Web2\scss\_components\_app-brand.scss" />
+    <Content Include="Web2\scss\_components\_avatar.scss" />
+    <Content Include="Web2\scss\_components\_base.scss" />
+    <Content Include="Web2\scss\_components\_common.scss" />
+    <Content Include="Web2\scss\_components\_footer.scss" />
+    <Content Include="Web2\scss\_components\_include.scss" />
+    <Content Include="Web2\scss\_components\_layout.scss" />
+    <Content Include="Web2\scss\_components\_menu.scss" />
+    <Content Include="Web2\scss\_components\_mixins.scss" />
+    <Content Include="Web2\scss\_components\_text-divider.scss" />
+    <Content Include="Web2\scss\_components\_variables.scss" />
+    <Content Include="Web2\scss\_custom-variables\_bootstrap-extended.scss" />
+    <Content Include="Web2\scss\_custom-variables\_components.scss" />
+    <Content Include="Web2\scss\_custom-variables\_libs.scss" />
+    <Content Include="Web2\scss\_custom-variables\_pages.scss" />
+    <Content Include="Web2\scss\_custom-variables\_support.scss" />
+    <Content Include="Web2\scss\_theme\_common.scss" />
+    <Content Include="Web2\scss\_theme\_theme.scss" />
+    <Content Include="Views\UserLogin\Index.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\UserHome\Index.cshtml" />
+    <Content Include="Views\UserHome\QRUpdate.cshtml" />
+    <Content Include="Views\UserHome\QRView.cshtml" />
+    <Content Include="Views\UserHome\Contact.cshtml" />
+    <Content Include="Views\UserHome\ContactFollow.cshtml" />
+    <Content Include="Views\UserHome\ProfilSetting.cshtml" />
+    <Content Include="Views\UserHome\QRViewPublic.cshtml" />
+    <Content Include="Views\UserHome\HowToUse.cshtml" />
+    <Content Include="Views\UserHomeB\HowToUseMenu.cshtml" />
+    <Content Include="Views\UserHome\UserWelcomePage.cshtml" />
+    <Content Include="Views\UserHomeB\MenuQrCategoryAdd.cshtml" />
+    <Content Include="Views\UserHomeB\SeeMenuQrCategories.cshtml" />
+    <Content Include="Views\UserHomeB\UpdateCategory.cshtml" />
+    <Content Include="Views\UserHomeB\AddContent.cshtml" />
+    <Content Include="Views\UserHomeB\SeeMenuQrList.cshtml" />
+    <Content Include="Views\UserHomeB\SeeMenuContentList.cshtml" />
+    <Content Include="Views\UserHomeB\EditMenuContent.cshtml" />
+    <Content Include="Views\UserHomeB\EditMenuContentPage.cshtml" />
+    <Content Include="Views\Shared\_PublicLayout.cshtml" />
+    <Content Include="Views\ReadQr\PublicMenuQr.cshtml" />
+    <Content Include="Views\ReadQr\PublicMenuContentQr.cshtml" />
+    <Content Include="Views\AdminLogin\AdminLoginIndex.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\AdminPanel\AdminListUser.cshtml" />
+    <Content Include="Views\ReadQr\MyQrCodeMenu.cshtml" />
+    <Content Include="Views\ReadQr\PublicPetQr.cshtml" />
+    <Content Include="Views\ReadQr\MyQrCodePet.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="ımage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{370b1831-4a9c-41d2-911c-059e24206ec6}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccesLayer\DataAccesLayer.csproj">
+      <Project>{394d71f1-1095-477b-9810-9315917fb3bd}</Project>
+      <Name>DataAccesLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{9a6ac505-7dfa-4966-8618-1f29d6d5509b}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55959</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44329/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

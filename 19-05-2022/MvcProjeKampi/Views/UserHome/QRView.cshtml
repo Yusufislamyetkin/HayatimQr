@@ -1,0 +1,449 @@
+﻿@model EntityLayer.Concrete.PetQR
+@{
+    ViewBag.Title = "QRView";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<style>
+    .avatar {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height: 50%;
+    }
+</style>
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+ -->
+<!-- beautify ignore:start -->
+
+
+<html lang="en"
+      class="light-style layout-menu-fixed"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="~/Web2/assets/"
+      data-template="vertical-menu-template-free">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Account settings - Account | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/72d82a5a39.js" crossorigin="anonymous"></script>
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/Web2/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/Web2/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="~/Web2/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+
+
+    <!-- Font Awesome -->
+  
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+   
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/72d82a5a39.js" crossorigin="anonymous"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Extra/userviewcs.css" rel="stylesheet" />
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/Web2/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/Web2/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                     id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <strong>@Model.User.UserName @Model.User.UserSurname</strong>
+                        <!-- /Search -->
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- Place this tag where you want the button to render. -->
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+
+
+                                @if (Model.User.UserImage == null)
+                                {
+                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                        <div class="avatar avatar-online">
+                                            <img src="~/Extra/images/fre2.png" alt="Avatar" class="avatar" />
+
+
+                                        </div>
+                                    </a>
+
+                                }
+                                else
+                                {
+                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                        <div class="avatar avatar-online">
+                                            <img src="@Model.User.UserImage" alt="Avatar" class="avatar" />
+
+                                        </div>
+                                    </a>
+                                }
+
+
+
+
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="card mb-4">
+
+                                    <!-- Account -->
+
+                                    <form action="/" method="get">
+
+
+                                        <section id="minimal-statistics">
+
+                                            <i class="bi bi-balloon-heart-fill"></i>
+                                            <div class="row">
+                                                <div class="col-xl-3 col-sm-6 col-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body">
+                                                                <div class="media d-flex">
+                                                                    <div class="align-self-center font-large-2">
+                                                                        <i class="fa-solid success fa-id-badge"></i>
+                                                                    </div>
+                                                                    <div class="media-body text-right">
+                                                                        <h3 style="font-weight:bold">Evcil Hayvan Sahibi</h3>
+                                                                        <span>@Model.PetOwnerName @Model.PetOwnerSurName</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-6 col-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body">
+                                                                <div class="media d-flex">
+                                                                    <div class="align-self-center font-large-2">
+                                                                        <i class="fa-solid  fa-phone"></i>
+                                                                    </div>
+                                                                    <div class="media-body text-right">
+                                                                        <h3 style="font-weight:bold">İleteşim Numarası</h3>
+                                                                        <span>@Model.PetOwnerPhone</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-sm-6 col-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body">
+                                                                <div class="media d-flex">
+                                                                    <div class="align-self-center font-large-2">
+                                                                        <i class="fa-solid warning fa-dog"></i>
+                                                                    </div>
+                                                                    <div class="media-body text-right">
+                                                                        <h3 style="font-weight:bold">Evcil Hayvanın Adı</h3>
+                                                                        <span>@Model.PetName</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl-3 col-sm-6 col-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body">
+                                                                <div class="media d-flex">
+                                                                    <div class="align-self-center font-large-2">
+                                                                        <i class="fa-solid success fa-arrow-right"></i>
+                                                                    </div>
+                                                                    <div class="media-body text-right">
+                                                                        <h3 style="font-weight:bold">Evcil Hayvanın Yaşı</h3>
+                                                                        <span>@Model.PetAge</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+
+
+                                                <div class="col-xl-6 col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body cleartfix">
+                                                                <div class="media align-items-stretch">
+                                                                    <div class="align-self-center">
+
+                                                                    </div>
+                                                                    <div class="media-body" style="margin-left:20px">
+                                                                        <h1 style="font-weight:bold;font-family:Centaur;text-align:center;color:blueviolet">Evcil Hayvanım</h1>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <br />
+
+                                                                @if (Model.PetImage == null || Model.PetImage == "")
+                                                                {
+                                                                    <div class="align-self-center">
+                                                                        <img src="~/Extra/images/defaultDC.jpg" alt="Avatar" class="center" />
+
+
+
+
+                                                                    </div>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <div class="align-self-center">
+                                                                        <img src="@Model.PetImage" alt="Avatar" class="center" />
+
+
+
+
+                                                                    </div>
+                                                                }
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xl-6 col-md-12">
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body cleartfix">
+                                                                <div class="media align-items-stretch">
+                                                                    <div class="align-self-center">
+
+                                                                    </div>
+                                                                    <div class="media-body" style="margin-left:20px">
+                                                                        <h3 style="font-weight:bold;text-align:center;color:red">Dikkat</h3>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <br />
+                                                                <div class="align-self-center">
+
+
+                                                                    <p style="text-align:center">@Model.PetWarning</p>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body cleartfix">
+                                                                <div class="media align-items-stretch">
+                                                                    <div class="align-self-center">
+
+                                                                    </div>
+                                                                    <div class="media-body" style="margin-left:20px">
+                                                                        <h3 style="font-weight:bold;text-align:center;color:orangered">Bilinmesi Gerekenler</h3>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <br />
+                                                                <div class="align-self-center">
+
+
+                                                                    <p style="text-align:center">@Model.PetWarning2</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card">
+                                                        <div class="card-content">
+                                                            <div class="card-body cleartfix">
+                                                                <div class="media align-items-stretch">
+                                                                    <div class="align-self-center">
+
+                                                                    </div>
+                                                                    <div class="media-body" style="margin-left:20px">
+                                                                        <h3 style="font-weight:bold;text-align:center;color:blueviolet">Bulan Kişiye Not</h3>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <br />
+                                                                <div class="align-self-center">
+
+                                                                    <p style="text-align:center">@Model.SpecialNote</p>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </section>
+
+
+                                    </form>
+                                    <!-- /Account -->
+                                </div>
+                                @if (TempData["AlertMessage1"] != null)
+                                {<div class="alert alert-info ">
+                                        <strong class="text-center" style="color: blueviolet"> Başarılı ! @TempData["AlertMessage1"] </strong>
+                                    </div>
+
+                                }
+                                @if (TempData["AlertMessage2"] != null)
+                                {<div class="alert alert-info ">
+                                        <strong class="text-center" style="color:blueviolet"> Başarısız ! @TempData["AlertMessage2"] </strong>
+                                    </div>
+
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/Web2/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/Web2/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/Web2/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/Web2/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="~/Web2/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="~/Web2/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/Web2/assets/js/pages-account-settings-account.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

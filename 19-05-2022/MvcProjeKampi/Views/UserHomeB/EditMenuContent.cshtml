@@ -1,0 +1,288 @@
+﻿@using EntityLayer.Concrete
+@model List<MenuQrHeading>
+
+@{
+    ViewBag.Title = "EditMenuContent";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+
+
+@{ string color = "";}
+@{ int dgr = 0;}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+
+
+
+
+
+    <!-- / Navbar -->
+    <!-- Content wrapper -->
+    <!-- Content wrapper -->
+    <!-- ======= Footer ======= -->
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+    <!-- Template Main JS File -->
+    <script src="~/Extra/Homepage/Login/assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+<html lang="en"
+      class="light-style layout-menu-fixed"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="~/Web2/assets/"
+      data-template="vertical-menu-template-free">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Account settings - Account | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="~/Web2/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="~/Web2/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="~/Web2/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+    <!-- Helpers -->
+    <script src="~/Web2/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                     id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <strong>@ViewBag.uservalue.UserName @ViewBag.uservalue.UserSurname</strong>
+                        <!-- /Search -->
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- Place this tag where you want the button to render. -->
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+
+
+                                @if (ViewBag.uservalue.UserImage == null)
+                                {
+                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                        <div class="avatar avatar-online">
+                                            <img src="~/Extra/images/fre2.png" alt="Avatar" class="avatar" />
+
+
+                                        </div>
+                                    </a>
+
+                                }
+                                else
+                                {
+                                    <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                        <div class="avatar avatar-online">
+                                            <img src="@ViewBag.uservalue.UserImage" alt="Avatar" class="avatar" />
+
+                                        </div>
+                                    </a>
+                                }
+
+
+
+
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+
+                        @if (TempData["AlertMessageDelete"] != null)
+                        {<div class="alert alert-info ">
+                                <strong class="text-center" style="color: blueviolet"> Başarılı ! @TempData["AlertMessageDelete"] </strong>
+                            </div>
+
+                        }
+                        @if (TempData["AlertMessageUpdate"] != null)
+                        {<div class="alert alert-info ">
+                                <strong class="text-center" style="color: blueviolet"> Başarılı ! @TempData["AlertMessageUpdate"] </strong>
+                            </div>
+
+                        }
+
+
+                        <div class="row">
+
+                            @foreach (var item in Model)
+                            {
+
+                                if (dgr == 0)
+                                {
+                                    color = "border-primary";
+
+                                }
+                                if (dgr == 1)
+                                {
+                                    color = "border-secondary";
+
+                                }
+                                if (dgr == 2)
+                                {
+                                    color = "border-success";
+
+                                }
+                                if (dgr == 3)
+                                {
+                                    color = "border-danger";
+
+                                }
+                                if (dgr == 4)
+                                {
+                                    color = "border-warning";
+
+                                }
+                                if (dgr == 5)
+                                {
+                                    color = "border-info";
+                                    dgr = 0;
+                                }
+
+
+
+
+
+
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card shadow-none bg-transparent border @color mb-3">
+
+
+                                        <div class="card-body">
+
+
+                                            <p class="card-title" style="text-align:center"><img class="card-img-top" src="@item.HeadingImage" alt="Card image cap" style="width:100px;height:100px" /></p>
+
+                                            <h3 class="card-title" style="text-align:center;font-weight:bold"> @item.HeadingName </h3>
+                                            <p class="card-text" style="text-align:center">@item.FirstContent </p>
+                                            <p class="card-text" style="text-align:center">@item.SecondaryContent</p>
+                                            <p class="card-text" style="text-align:center">@item.productPrice TL</p>
+
+
+                                            <p class="card-text" style="text-align:center"><a href="/UserHomeB/EditMenuContentPage/@item.MenuQrHeadingID" class="btn btn-outline-primary">İçerik Güncelle</a> <a  style="margin-left:5px "href="/UserHomeB/DeleteMenuContent/@item.MenuQrHeadingID" class="btn btn-outline-danger">İçerik Sil</a> </p>
+
+                                            @if (true)
+                                            {
+                                                dgr++;
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+
+    </div>
+    <!-- / Layout wrapper -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="~/Web2/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/Web2/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/Web2/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/Web2/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="~/Web2/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="~/Web2/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/Web2/assets/js/pages-account-settings-account.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
